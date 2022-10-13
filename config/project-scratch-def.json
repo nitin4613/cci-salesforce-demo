@@ -1,6 +1,6 @@
 {
-  "orgName": "Demo company",
-  "edition": "Enterprise",
+  "orgName": "MyAppDev",
+  "edition": "Developer",
   "features": [
     "Knowledge",
     "ServiceCloud",
@@ -8,7 +8,8 @@
     "AuthorApex",
     "Communities",
     "DefaultWorkflowUser",
-    "MarketingUser"
+    "MarketingUser",
+    "EnableSetPasswordInApi"
   ],
   "settings": {
     "lightningExperienceSettings": {
