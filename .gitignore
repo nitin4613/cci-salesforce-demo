@@ -11,10 +11,10 @@
 
 # LWC Jest coverage reports
 coverage/
-
+.sf/
 # SOQL Query Results
 **/scripts/soql/query-results
-
+keys/
 # Logs
 logs
 *.log
