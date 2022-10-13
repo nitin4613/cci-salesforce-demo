@@ -8,7 +8,7 @@
 
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
-
+test-results/
 # LWC Jest coverage reports
 coverage/
 .sf/
