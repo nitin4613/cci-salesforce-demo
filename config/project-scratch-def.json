@@ -1,31 +1,13 @@
 {
-  "orgName": "MyAppDev",
+  "orgName": "MyApp",
   "edition": "Developer",
-  "features": [
-    "Knowledge",
-    "ServiceCloud",
-    "Entitlements",
-    "AuthorApex",
-    "Communities",
-    "DefaultWorkflowUser",
-    "MarketingUser",
-    "EnableSetPasswordInApi"
-  ],
+  "features": ["EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
-    "securitySettings": {
-      "passwordPolicies": {
-        "enableSetPasswordInApi": true
-      }
-    },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
-    },
-    "communitiesSettings": {
-      "enableNetworksEnabled": true
     }
   }
 }
-

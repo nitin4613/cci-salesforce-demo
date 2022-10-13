@@ -71,13 +71,17 @@ jobs:
           name: Deploy to Org
           command: echo ". build/deploy_code.sh"
 workflows:
-  version: 2
-  validate:
+  review-test-deploy:
     jobs:
       - run-tests
       - code-review:
           requires:
             - run-tests
+      - hold:
+          type: approval
+          requires:
+            - run-tests
+            - code-review
       - deploy-code:
           requires:
-            - code-review
+            - hold
