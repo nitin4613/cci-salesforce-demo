@@ -69,7 +69,7 @@ jobs:
           command: . build/login_to_org.sh
       - run:
           name: Deploy to Org
-          command: . build/deploy_code.sh
+          command: echo ". build/deploy_code.sh"
 workflows:
   version: 2
   validate:
