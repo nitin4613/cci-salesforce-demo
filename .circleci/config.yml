@@ -24,7 +24,7 @@ jobs:
           command: . build/login_to_sandbox.sh
       - run:
           name: Run Apex Tests
-          command: . build/run_apex_tests.sh
+          command: echo ". build/run_apex_tests.sh"
       - store_test_results:
           path: test-results
   code-review:
