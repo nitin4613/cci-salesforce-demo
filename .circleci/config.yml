@@ -24,7 +24,7 @@ jobs:
           command: . build/login_to_sandbox.sh
       - run:
           name: Run Apex Tests
-          command: echo ". build/run_apex_tests.sh"
+          command: . build/run_apex_tests.sh
       - store_test_results:
           path: test-results
   code-review:
@@ -45,7 +45,7 @@ jobs:
             - node_modules
       - run:
           name: SFDX Scanner Analysis
-          command: echo ". build/run_sfdx_scanner.sh"
+          command: . build/run_sfdx_scanner.sh
       - store_artifacts:
           path: sfdxScannerAnalysis.csv
   deploy-code:
@@ -69,14 +69,12 @@ jobs:
           command: . build/login_to_org.sh
       - run:
           name: Deploy to Org
-          command: echo ". build/deploy_code.sh"
+          command: . build/deploy_code.sh
 workflows:
   review-test-deploy:
     jobs:
       - run-tests
-      - code-review:
-          requires:
-            - run-tests
+      - code-review
       - hold:
           type: approval
           requires:
