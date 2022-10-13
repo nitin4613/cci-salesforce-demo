@@ -4,9 +4,8 @@ orbs:
 
 jobs:
   run-tests:
-    executor: sfdx/default
-    # docker:
-    #   - image: circleci/node:latest
+    docker:
+      - image: circleci/node:latest
     steps:
       - checkout
       - restore_cache:
