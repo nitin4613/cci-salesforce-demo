@@ -1,29 +1,36 @@
 version: 2.1 
+orbs:
+  salesforce-sfdx: circleci/salesforce-sfdx@2.2.0
+
 jobs:
   run-tests:
-    docker:
-      - image: circleci/node:latest
+    executor: sfdx/default
+    # docker:
+    #   - image: circleci/node:latest
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - dependency-cache-{{ checksum "package.json" }}
-            - dependency-cache-
-      - run:
-          name: Install Dependencies
-          command: . build/install_dependencies.sh
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run: 
-          name: Login to Org
-          command: . build/login_to_sandbox.sh
+      - sfdx/install
+      - sfdx/auth:
+          defaultusername: tsvi@learnsfdx.com
+      # - restore_cache:
+      #     keys:
+      #       - dependency-cache-{{ checksum "package.json" }}
+      #       - dependency-cache-
+      # - run:
+      #     name: Install Dependencies
+      #     command: . build/install_dependencies.sh
+      # - save_cache:
+      #     key: dependency-cache-{{ checksum "package.json" }}
+      #     paths:
+      #       - node_modules
+      # - run: 
+      #     name: Login to Org
+      #     command: . build/login_to_sandbox.sh
       - run:
           name: Run Apex Tests
           command: . build/run_apex_tests.sh
-      - store_test_results:
-          path: test-results
+      # - store_test_results:
+      #     path: test-results
   code-review:
     docker:
       - image: circleci/node:latest
