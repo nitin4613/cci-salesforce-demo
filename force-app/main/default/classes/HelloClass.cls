@@ -1,3 +1,6 @@
+/**
+ * @description Hello Class
+ */
 public with sharing class HelloClass {
     public static Integer myValue = 0;  //Class Member variable
     public static String myString = ''; //Class Member variable
