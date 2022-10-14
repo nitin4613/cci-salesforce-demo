@@ -1,7 +1,3 @@
-# echo "Installing JDK"
-# sudo apt-get update
-# sudo apt-get install default-jdk
-
 echo "Install SFDX Scanner"
 echo -e 'y/n' | sfdx plugins:install @salesforce/sfdx-scanner
 
