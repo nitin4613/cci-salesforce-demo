@@ -29,7 +29,7 @@ jobs:
           path: test-results
   code-review:
     docker:
-      - image: cimg/openjdk
+      - image: cimg/openjdk:11.0-node
     steps:
       - checkout
       - restore_cache:
