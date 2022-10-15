@@ -1,9 +1,9 @@
 /**
  * @description Hello World
  */
-public class TemperatureConverter {
+public with sharing class TemperatureConverter {
     // Takes a Fahrenheit temperature and returns the Celsius equivalent.
-     /**
+    /**
      * @description Bar
      * @return Bar
      */
